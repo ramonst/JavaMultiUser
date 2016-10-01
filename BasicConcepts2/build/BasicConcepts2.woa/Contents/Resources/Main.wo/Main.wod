@@ -1,0 +1,20 @@
+zeit : WOString 
+{
+	value = systemZeit;
+	dateformat = "%H:%M:%S";
+}
+
+meinStyleFile : ERXStyleSheet 
+{
+	filename = "myStyles.css";
+}
+
+zeitLink : WOHyperlink
+{
+	action = reload;
+}
+
+hi : WOHyperlink
+{
+ action = sayHi;
+}
