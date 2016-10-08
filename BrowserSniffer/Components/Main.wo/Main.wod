@@ -1,0 +1,52 @@
+zeit : WOString 
+{
+	value = systemZeit;
+	dateformat = "%H:%M:%S";
+}
+deleteSession : WOHyperlink {
+	action = terminateSession;
+}
+mainCounter : WOString
+{
+	value = application.mainPageCounter;
+}
+
+backCounter :WOString
+{
+	value = application.backCounter;
+}
+
+sessionCounter : WOString
+{
+	value = application.sessionCounter;
+}
+browserName : WOString
+{
+	value = browser.browserName;
+}
+
+browserPic : WOImage
+{
+	
+	filename = getBrowserName;
+	framework = "appl";
+	
+}
+
+
+email : ERXMailTo {
+	email = "ramonstohr@hotmail.com";
+ 
+}
+
+
+
+zeitLink : WOHyperlink
+{
+	action = reload;
+}
+
+hi : WOHyperlink
+{
+ 	action = sayHi;
+}

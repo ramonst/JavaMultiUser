@@ -1,0 +1,11 @@
+browserName : WOString
+{
+	value = getBrowserName;
+	
+}
+
+back : WOHyperlink
+{
+	
+	action = getPreviousPage;
+}

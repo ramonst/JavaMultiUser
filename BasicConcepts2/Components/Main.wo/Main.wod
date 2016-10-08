@@ -3,11 +3,23 @@ zeit : WOString
 	value = systemZeit;
 	dateformat = "%H:%M:%S";
 }
+cat : WOHyperlink
+{
+	action = makeMeow;
+}
+
 
 meinStyleFile : ERXStyleSheet 
 {
 	filename = "myStyles.css";
 }
+
+email : ERXMailTo {
+	email = "ramonstohr@hotmail.com";
+ 
+}
+
+
 
 zeitLink : WOHyperlink
 {

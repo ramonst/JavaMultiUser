@@ -24,4 +24,11 @@ public class Main extends BaseComponent {
 	{
 		return null;
 	}
+	
+	public game makeMeow()
+	{
+		game meow = pageWithName(game.class);
+		return meow;
+	}
+
 }
