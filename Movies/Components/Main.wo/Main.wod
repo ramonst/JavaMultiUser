@@ -1,0 +1,21 @@
+titel : WOTextField {
+	value = filmTitel;
+}
+
+studio : WOTextField {
+	value = filmStudio;
+}
+
+regisseur : WOTextField {
+	value = filmRegisseur;
+}
+
+
+submit : WOSubmitButton {
+	action = letsgo;
+	value = "Suchen";
+}
+
+titelname : WOTextField {
+	value = movie;
+}

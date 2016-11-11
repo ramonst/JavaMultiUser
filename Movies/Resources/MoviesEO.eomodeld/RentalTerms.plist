@@ -1,0 +1,62 @@
+{
+    attributes = (
+        {
+            className = "java.lang.Number"; 
+            columnName = "CHECK_OUT_LENGTH"; 
+            externalType = INT; 
+            name = checkOutLength; 
+            precision = 10; 
+            valueType = l; 
+        }, 
+        {
+            className = "java.lang.Number"; 
+            columnName = COST; 
+            externalType = DOUBLE; 
+            name = cost; 
+            precision = 20; 
+            scale = 2; 
+            valueType = d; 
+        }, 
+        {
+            className = "java.lang.Number"; 
+            columnName = "DEPOSIT_AMOUNT"; 
+            externalType = DOUBLE; 
+            name = depositAmount; 
+            precision = 20; 
+            scale = 2; 
+            valueType = d; 
+        }, 
+        {
+            columnName = NAME; 
+            externalType = VARCHAR; 
+            name = name; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            className = "java.lang.Number"; 
+            columnName = "RENTAL_TERM_ID"; 
+            externalType = INT; 
+            name = rentalTermId; 
+            precision = 10; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (checkOutLength, cost, depositAmount, name, rentalTermId); 
+    className = "ch.filme.RentalTerms"; 
+    classProperties = (checkOutLength, cost, depositAmount, name, videos); 
+    externalName = "rental_terms"; 
+    fetchSpecificationDictionary = {}; 
+    name = RentalTerms; 
+    primaryKeyAttributes = (rentalTermId); 
+    relationships = (
+        {
+            destination = Video; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = rentalTermsId; sourceAttribute = rentalTermId; }); 
+            name = videos; 
+        }
+    ); 
+}

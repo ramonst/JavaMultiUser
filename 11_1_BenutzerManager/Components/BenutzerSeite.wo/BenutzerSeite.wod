@@ -1,0 +1,66 @@
+liste : WORepetition {
+	list = application.benutzerListe;
+	item = benutzerLoopvar;
+}
+
+isAdmin : WOConditional {
+	condition = session.benutzer.admin;
+}
+
+isNotAdmin : WOConditional {
+	condition = session.benutzer.admin;
+	negate = true;
+}
+
+listeName : WOString {
+	value = benutzerLoopvar.name;
+}
+
+bearbeitenLink : WOHyperlink {
+	action = edit;
+}
+
+anrede : WOTextField{
+	value = currentBenutzer.anrede;
+}
+
+name : WOTextField {
+	value = currentBenutzer.name;
+}
+
+vorname : WOTextField {
+	value = currentBenutzer.vorname;
+}
+
+login : WOTextField {
+	value = currentBenutzer.login;
+}
+
+passwort : WOTextField {
+	value = currentBenutzer.passwort;
+}
+
+admin : WOCheckBox {
+	checked = currentBenutzer.admin;
+}
+
+save : WOSubmitButton {
+	action = speichern;
+	value = "Speichern";
+}
+
+form : WOForm {
+	multipleSubmit = true;
+}
+
+neu : WOHyperlink {
+	action = neu;
+}
+
+loeschen : WOHyperlink {
+	action = loeschen;
+}
+
+showEdit : WOConditional {
+	condition = currentBenutzer;
+}

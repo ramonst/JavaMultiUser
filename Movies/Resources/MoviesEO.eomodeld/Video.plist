@@ -1,0 +1,58 @@
+{
+    attributes = (
+        {
+            className = "java.lang.Number"; 
+            columnName = "MOVIE_ID"; 
+            externalType = INT; 
+            name = movieId; 
+            precision = 10; 
+            valueType = l; 
+        }, 
+        {
+            className = "java.lang.Number"; 
+            columnName = "RENTAL_TERMS_ID"; 
+            externalType = INT; 
+            name = rentalTermsId; 
+            precision = 10; 
+            valueType = l; 
+        }, 
+        {
+            className = "java.lang.Number"; 
+            columnName = "VIDEO_ID"; 
+            externalType = INT; 
+            name = videoId; 
+            precision = 10; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (movieId, rentalTermsId, videoId); 
+    className = "ch.filme.Video"; 
+    classProperties = (movie, rentalTerms, units); 
+    externalName = video; 
+    fetchSpecificationDictionary = {}; 
+    name = Video; 
+    primaryKeyAttributes = (videoId); 
+    relationships = (
+        {
+            destination = Movie; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = movieId; sourceAttribute = movieId; }); 
+            name = movie; 
+        }, 
+        {
+            destination = RentalTerms; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = rentalTermId; sourceAttribute = rentalTermsId; }); 
+            name = rentalTerms; 
+        }, 
+        {
+            destination = Unit; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = videoId; sourceAttribute = videoId; }); 
+            name = units; 
+        }
+    ); 
+}

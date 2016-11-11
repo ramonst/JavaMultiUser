@@ -1,0 +1,47 @@
+{
+    attributes = (
+        {
+            className = "java.lang.Number"; 
+            columnName = "MOVIE_ID"; 
+            externalType = INT; 
+            name = movieId; 
+            precision = 10; 
+            valueType = l; 
+        }, 
+        {
+            allowsNull = Y; 
+            className = "java.lang.Number"; 
+            columnName = "NUMBER_OF_VOTES"; 
+            externalType = INT; 
+            name = numberOfVotes; 
+            precision = 10; 
+            valueType = l; 
+        }, 
+        {
+            allowsNull = Y; 
+            className = "java.lang.Number"; 
+            columnName = "RUNNING_AVERAGE"; 
+            externalType = DOUBLE; 
+            name = runningAverage; 
+            precision = 20; 
+            scale = 8; 
+            valueType = d; 
+        }
+    ); 
+    attributesUsedForLocking = (movieId, numberOfVotes, runningAverage); 
+    className = "ch.filme.Voting"; 
+    classProperties = (movie, numberOfVotes, runningAverage); 
+    externalName = voting; 
+    fetchSpecificationDictionary = {}; 
+    name = Voting; 
+    primaryKeyAttributes = (movieId); 
+    relationships = (
+        {
+            destination = Movie; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = movieId; sourceAttribute = movieId; }); 
+            name = movie; 
+        }
+    ); 
+}

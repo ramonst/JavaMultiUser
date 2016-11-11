@@ -1,0 +1,27 @@
+{
+    attributes = (
+        {
+            className = "java.lang.Number"; 
+            columnName = "MOVIE_ID"; 
+            externalType = INT; 
+            name = movieId; 
+            precision = 10; 
+            valueType = l; 
+        }, 
+        {
+            allowsNull = Y; 
+            className = "com.webobjects.foundation.NSData"; 
+            columnName = SUMMARY; 
+            externalType = BLOB; 
+            name = summary; 
+            width = 65535; 
+        }
+    ); 
+    attributesUsedForLocking = (movieId, summary); 
+    className = "ch.filme.PlotSummary"; 
+    classProperties = (summary); 
+    externalName = "plot_summary"; 
+    fetchSpecificationDictionary = {}; 
+    name = PlotSummary; 
+    primaryKeyAttributes = (movieId); 
+}

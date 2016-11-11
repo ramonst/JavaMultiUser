@@ -1,0 +1,45 @@
+{
+    attributes = (
+        {columnName = "DATE_ACQUIRED"; name = dateAcquired; prototypeName = dateTime; }, 
+        {columnName = NOTES; name = notes; prototypeName = varchar255; }, 
+        {
+            className = "java.lang.Number"; 
+            columnName = "UNIT_ID"; 
+            externalType = INT; 
+            name = unitId; 
+            precision = 10; 
+            valueType = l; 
+        }, 
+        {
+            className = "java.lang.Number"; 
+            columnName = "VIDEO_ID"; 
+            externalType = INT; 
+            name = videoId; 
+            precision = 10; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (dateAcquired, notes, unitId, videoId); 
+    className = "ch.filme.Unit"; 
+    classProperties = (dateAcquired, notes, rentals, video); 
+    externalName = unit; 
+    fetchSpecificationDictionary = {}; 
+    name = Unit; 
+    primaryKeyAttributes = (unitId); 
+    relationships = (
+        {
+            destination = Rental; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = unitId; sourceAttribute = unitId; }); 
+            name = rentals; 
+        }, 
+        {
+            destination = Video; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = videoId; sourceAttribute = videoId; }); 
+            name = video; 
+        }
+    ); 
+}

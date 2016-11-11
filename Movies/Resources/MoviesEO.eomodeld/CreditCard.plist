@@ -1,0 +1,74 @@
+{
+    attributes = (
+        {
+            columnName = "AUTHORIZATION_DATE"; 
+            name = authorizationDate; 
+            prototypeName = dateTime; 
+        }, 
+        {
+            columnName = "AUTHORIZATION_NUM"; 
+            name = authorizationNum; 
+            prototypeName = varchar10; 
+        }, 
+        {
+            columnName = "CARD_NUMBER"; 
+            externalType = VARCHAR; 
+            name = cardNumber; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 25; 
+        }, 
+        {
+            className = "java.lang.Number"; 
+            columnName = CLIMIT; 
+            externalType = DOUBLE; 
+            name = climit; 
+            precision = 20; 
+            scale = 2; 
+            valueType = d; 
+        }, 
+        {
+            className = "java.lang.Number"; 
+            columnName = "CUSTOMER_ID"; 
+            externalType = INT; 
+            name = customerId; 
+            precision = 10; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "EXPIRATION_DATE"; 
+            name = expirationDate; 
+            prototypeName = dateTime; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        authorizationDate, 
+        authorizationNum, 
+        cardNumber, 
+        climit, 
+        customerId, 
+        expirationDate
+    ); 
+    className = "ch.filme.CreditCard"; 
+    classProperties = (
+        authorizationDate, 
+        authorizationNum, 
+        cardNumber, 
+        climit, 
+        customer, 
+        expirationDate
+    ); 
+    externalName = "credit_card"; 
+    fetchSpecificationDictionary = {}; 
+    name = CreditCard; 
+    primaryKeyAttributes = (customerId); 
+    relationships = (
+        {
+            destination = Customer; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = customerId; sourceAttribute = customerId; }); 
+            name = customer; 
+        }
+    ); 
+}

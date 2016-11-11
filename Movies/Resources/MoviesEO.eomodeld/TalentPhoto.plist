@@ -1,0 +1,27 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            className = "com.webobjects.foundation.NSData"; 
+            columnName = PHOTO; 
+            externalType = BLOB; 
+            name = photo; 
+            width = 65535; 
+        }, 
+        {
+            className = "java.lang.Number"; 
+            columnName = "TALENT_ID"; 
+            externalType = INT; 
+            name = talentId; 
+            precision = 10; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (photo, talentId); 
+    className = "ch.filme.TalenPhoto"; 
+    classProperties = (photo); 
+    externalName = "talent_photo"; 
+    fetchSpecificationDictionary = {}; 
+    name = TalentPhoto; 
+    primaryKeyAttributes = (talentId); 
+}

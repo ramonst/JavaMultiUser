@@ -1,0 +1,9 @@
+package ch.filme;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class Video extends _Video {
+	@SuppressWarnings("unused")
+	private static final Logger log = LoggerFactory.getLogger(Video.class);
+}

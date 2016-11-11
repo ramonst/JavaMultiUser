@@ -1,0 +1,105 @@
+{
+    attributes = (
+        {
+            columnName = CITY; 
+            externalType = VARCHAR; 
+            name = city; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            className = "java.lang.Number"; 
+            columnName = "CUSTOMER_ID"; 
+            externalType = INT; 
+            name = customerId; 
+            precision = 10; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "FIRST_NAME"; 
+            externalType = VARCHAR; 
+            name = firstName; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "LAST_NAME"; 
+            externalType = VARCHAR; 
+            name = lastName; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }, 
+        {columnName = "MEMBER_SINCE"; name = memberSince; prototypeName = dateTime; }, 
+        {columnName = PHONE; name = phone; prototypeName = varchar10; }, 
+        {
+            allowsNull = Y; 
+            columnName = STATE; 
+            externalType = CHAR; 
+            name = state; 
+            valueClassName = NSString; 
+            valueType = c; 
+            width = 2; 
+        }, 
+        {
+            columnName = "STREET_ADDRESS"; 
+            name = streetAddress; 
+            prototypeName = shortString; 
+        }, 
+        {columnName = ZIP; name = zip; prototypeName = varchar10; }
+    ); 
+    attributesUsedForLocking = (
+        city, 
+        customerId, 
+        firstName, 
+        lastName, 
+        memberSince, 
+        phone, 
+        state, 
+        streetAddress, 
+        zip
+    ); 
+    className = "ch.filme.Customer"; 
+    classProperties = (
+        city, 
+        creditCards, 
+        firstName, 
+        lastName, 
+        memberSince, 
+        phone, 
+        rentals, 
+        rentalsUsers, 
+        state, 
+        streetAddress, 
+        zip
+    ); 
+    externalName = customer; 
+    fetchSpecificationDictionary = {}; 
+    name = Customer; 
+    primaryKeyAttributes = (customerId); 
+    relationships = (
+        {
+            destination = CreditCard; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = customerId; sourceAttribute = customerId; }); 
+            name = creditCards; 
+        }, 
+        {
+            destination = Rental; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = customerId; sourceAttribute = customerId; }); 
+            name = rentals; 
+        }, 
+        {
+            destination = RentalsUser; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = customerId; sourceAttribute = customerId; }); 
+            name = rentalsUsers; 
+        }
+    ); 
+}

@@ -1,0 +1,28 @@
+{
+    attributes = (
+        {
+            columnName = NAME; 
+            externalType = CHAR; 
+            name = name; 
+            valueClassName = NSString; 
+            valueType = c; 
+            width = 40; 
+        }, 
+        {
+            allowsNull = Y; 
+            className = "java.lang.Number"; 
+            columnName = PK; 
+            externalType = INT; 
+            name = pk; 
+            precision = 10; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (name, pk); 
+    className = "com.webobjects.eocontrol.EOGenericRecord"; 
+    classProperties = (pk); 
+    externalName = "eo_pk_table"; 
+    fetchSpecificationDictionary = {}; 
+    name = EoPkTable; 
+    primaryKeyAttributes = (name); 
+}

@@ -1,0 +1,24 @@
+{
+    attributes = (
+        {allowsNull = N; name = id; prototypeName = id; }, 
+        {columnName = NAME; name = name; prototypeName = varchar50; }, 
+        {columnName = PREIS; name = preis; prototypeName = currencyAmount; scale = 2; }
+    ); 
+    attributesUsedForLocking = (id, name, preis); 
+    className = "ch.wiss.EOBasics.eo.Artikel"; 
+    classProperties = (bestellpositionen, name, preis); 
+    externalName = ARTIKEL; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_javaClientClassName" = Artikel; }; 
+    name = Artikel; 
+    primaryKeyAttributes = (id); 
+    relationships = (
+        {
+            destination = Bestellposition; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = artikelID; sourceAttribute = id; }); 
+            name = bestellpositionen; 
+        }
+    ); 
+}

@@ -1,0 +1,36 @@
+{
+    attributes = (
+        {
+            className = "java.lang.Number"; 
+            columnName = "MOVIE_ID"; 
+            externalType = INT; 
+            name = movieId; 
+            precision = 10; 
+            valueType = l; 
+        }, 
+        {
+            className = "java.lang.Number"; 
+            columnName = "TALENT_ID"; 
+            externalType = INT; 
+            name = talentId; 
+            precision = 10; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (movieId, talentId); 
+    className = "ch.filme.Director"; 
+    classProperties = (movie); 
+    externalName = director; 
+    fetchSpecificationDictionary = {}; 
+    name = Director; 
+    primaryKeyAttributes = (movieId, talentId); 
+    relationships = (
+        {
+            destination = Movie; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = movieId; sourceAttribute = movieId; }); 
+            name = movie; 
+        }
+    ); 
+}

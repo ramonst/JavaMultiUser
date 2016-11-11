@@ -1,0 +1,10 @@
+{
+    attributes = ({allowsNull = N; name = id; prototypeName = id; }); 
+    attributesUsedForLocking = (id); 
+    className = minibar; 
+    externalName = MINIBAR; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_javaClientClassName" = minibar; }; 
+    name = minibar; 
+    primaryKeyAttributes = (id); 
+}

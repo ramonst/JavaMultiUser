@@ -1,0 +1,45 @@
+{
+    attributes = (
+        {
+            className = "java.lang.Number"; 
+            columnName = BUDGET; 
+            externalType = DOUBLE; 
+            name = budget; 
+            precision = 20; 
+            scale = 2; 
+            valueType = d; 
+        }, 
+        {
+            columnName = NAME; 
+            externalType = VARCHAR; 
+            name = name; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 40; 
+        }, 
+        {
+            className = "java.lang.Number"; 
+            columnName = "STUDIO_ID"; 
+            externalType = INT; 
+            name = studioId; 
+            precision = 10; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (budget, name, studioId); 
+    className = "ch.filme.Studio"; 
+    classProperties = (budget, movies, name); 
+    externalName = studio; 
+    fetchSpecificationDictionary = {}; 
+    name = Studio; 
+    primaryKeyAttributes = (studioId); 
+    relationships = (
+        {
+            destination = Movie; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = studioId; sourceAttribute = studioId; }); 
+            name = movies; 
+        }
+    ); 
+}

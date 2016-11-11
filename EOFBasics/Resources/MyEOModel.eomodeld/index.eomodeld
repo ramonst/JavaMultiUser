@@ -1,0 +1,31 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {
+        URL = "jdbc:mysql://localhost/eofbasics"; 
+        password = 010189; 
+        username = root; 
+    }; 
+    entities = (
+        {className = "ch.wiss.EOBasics.eo.Artikel"; name = Artikel; }, 
+        {className = "ch.wiss.EOBasics.eo.Bestellposition"; name = Bestellposition; }, 
+        {className = "ch.wiss.EOBasics.eo.Bestellung"; name = Bestellung; }, 
+        {className = "ch.wiss.EOBasics.eo.Kunde"; name = Kunde; }
+    ); 
+    userInfo = {
+        "_EntityModeler" = {
+            activeDatabaseConfigName = Default; 
+            databaseConfigs = {
+                Default = {
+                    adaptorName = JDBC; 
+                    connectionDictionary = {
+                        URL = "jdbc:mysql://localhost/eofbasics"; 
+                        password = 010189; 
+                        username = root; 
+                    }; 
+                    prototypeEntityName = EOJDBCMySQLPrototypes; 
+                }; 
+            }; 
+        }; 
+    }; 
+}

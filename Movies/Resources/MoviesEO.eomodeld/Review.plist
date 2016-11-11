@@ -1,0 +1,45 @@
+{
+    attributes = (
+        {
+            className = "java.lang.Number"; 
+            columnName = "MOVIE_ID"; 
+            externalType = INT; 
+            name = movieId; 
+            precision = 10; 
+            valueType = l; 
+        }, 
+        {
+            allowsNull = Y; 
+            className = "com.webobjects.foundation.NSData"; 
+            columnName = REVIEW; 
+            externalType = BLOB; 
+            name = review; 
+            width = 65535; 
+        }, 
+        {columnName = REVIEWER; name = reviewer; prototypeName = shortString; }, 
+        {
+            className = "java.lang.Number"; 
+            columnName = "REVIEW_ID"; 
+            externalType = INT; 
+            name = reviewId; 
+            precision = 10; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (movieId, review, reviewer, reviewId); 
+    className = "ch.filme.Review"; 
+    classProperties = (movie, review, reviewer); 
+    externalName = review; 
+    fetchSpecificationDictionary = {}; 
+    name = Review; 
+    primaryKeyAttributes = (reviewId); 
+    relationships = (
+        {
+            destination = Movie; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = movieId; sourceAttribute = movieId; }); 
+            name = movie; 
+        }
+    ); 
+}

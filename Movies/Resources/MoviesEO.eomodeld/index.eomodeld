@@ -1,0 +1,39 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {URL = "jdbc:mysql://localhost/WOMovies"; password = 010189; username = root; }; 
+    entities = (
+        {className = "ch.filme.CreditCard"; name = CreditCard; }, 
+        {className = "ch.filme.Customer"; name = Customer; }, 
+        {className = "ch.filme.Director"; name = Director; }, 
+        {className = "com.webobjects.eocontrol.EOGenericRecord"; name = EoPkTable; }, 
+        {className = "ch.filme.Fee"; name = Fee; }, 
+        {className = "ch.filme.FeeType"; name = FeeType; }, 
+        {className = "ch.filme.Movie"; name = Movie; }, 
+        {className = "ch.filme.MovieRole"; name = MovieRole; }, 
+        {className = "ch.filme.PlotSummary"; name = PlotSummary; }, 
+        {className = "ch.filme.Rental"; name = Rental; }, 
+        {className = "ch.filme.RentalsUser"; name = RentalsUser; }, 
+        {className = "ch.filme.RentalTerms"; name = RentalTerms; }, 
+        {className = "ch.filme.Review"; name = Review; }, 
+        {className = "ch.filme.Studio"; name = Studio; }, 
+        {className = "ch.filme.Talent"; name = Talent; }, 
+        {className = "ch.filme.TalenPhoto"; name = TalentPhoto; }, 
+        {className = "ch.filme.Unit"; name = Unit; }, 
+        {className = "ch.filme.Video"; name = Video; }, 
+        {className = "ch.filme.Voting"; name = Voting; }
+    ); 
+    userInfo = {
+        "_EntityModeler" = {
+            activeDatabaseConfigName = Default; 
+            databaseConfigs = {
+                Default = {
+                    adaptorName = JDBC; 
+                    connectionDictionary = {URL = "jdbc:mysql://localhost/WOMovies"; password = 010189; username = root; }; 
+                    prototypeEntityName = EOJDBCMySQLPrototypes; 
+                }; 
+            }; 
+            reverseEngineered = Y; 
+        }; 
+    }; 
+}

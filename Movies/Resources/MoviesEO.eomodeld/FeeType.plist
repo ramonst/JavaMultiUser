@@ -1,0 +1,52 @@
+{
+    attributes = (
+        {
+            className = "java.lang.Number"; 
+            columnName = ENABLED; 
+            externalType = INT; 
+            name = enabled; 
+            precision = 10; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "FEE_TYPE"; 
+            externalType = VARCHAR; 
+            name = feeType; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 15; 
+        }, 
+        {
+            className = "java.lang.Number"; 
+            columnName = "FEE_TYPE_ID"; 
+            externalType = INT; 
+            name = feeTypeId; 
+            precision = 10; 
+            valueType = l; 
+        }, 
+        {
+            className = "java.lang.Number"; 
+            columnName = "ORDER_BY"; 
+            externalType = INT; 
+            name = orderBy; 
+            precision = 10; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (enabled, feeType, feeTypeId, orderBy); 
+    className = "ch.filme.FeeType"; 
+    classProperties = (enabled, fees, feeType, orderBy); 
+    externalName = "fee_type"; 
+    fetchSpecificationDictionary = {}; 
+    name = FeeType; 
+    primaryKeyAttributes = (feeTypeId); 
+    relationships = (
+        {
+            destination = Fee; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = feeTypeId; sourceAttribute = feeTypeId; }); 
+            name = fees; 
+        }
+    ); 
+}

@@ -1,0 +1,9 @@
+{
+    attributes = ({allowsNull = N; name = id; prototypeName = id; }); 
+    attributesUsedForLocking = (id); 
+    className = gast; 
+    externalName = GAST; 
+    fetchSpecificationDictionary = {}; 
+    name = gast; 
+    primaryKeyAttributes = (id); 
+}

@@ -1,0 +1,28 @@
+{
+    attributes = (
+        {allowsNull = N; name = id; prototypeName = id; }, 
+        {columnName = NNAME; name = nachname; prototypeName = varchar16; }, 
+        {
+            allowsNull = Y; 
+            columnName = VNAME; 
+            name = vorname; 
+            prototypeName = varchar16; 
+        }
+    ); 
+    attributesUsedForLocking = (id, nachname, vorname); 
+    className = "ch.wiss.EOBasics.eo.Kunde"; 
+    classProperties = (bestellungen, nachname, vorname); 
+    externalName = KUNDE; 
+    fetchSpecificationDictionary = {}; 
+    name = Kunde; 
+    primaryKeyAttributes = (id); 
+    relationships = (
+        {
+            destination = Bestellung; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = kundeID; sourceAttribute = id; }); 
+            name = bestellungen; 
+        }
+    ); 
+}

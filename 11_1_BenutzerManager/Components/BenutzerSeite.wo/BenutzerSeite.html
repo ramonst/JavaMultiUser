@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8"/>
+	<title>Benutzer</title>
+</head>
+<body>
+	<ul>
+		<webobject name ="liste">
+			<webobject name = "isAdmin">
+				<li><webobject name = "bearbeitenLink"><webobject name ="listeName" /></webobject></li>
+			</webobject>
+			<webobject name = "isNotAdmin">
+				<li><webobject name ="listeName" /></li>
+			</webobject>
+		</webobject>
+	</ul>
+	<webobject name = "isAdmin">
+	<p><webobject name = "neu">Neuer Benutzer</webobject>
+	</webobject>
+	
+	<webobject name = "showEdit">
+	<webobject name = "form">
+	<table>
+		<tr>
+			<th>Anrede</th><td><webobject name = "anrede" /></td>
+		</tr>
+		<tr>
+			<th>Name</th><td><webobject name = "name" /></td>
+		</tr>
+		<tr>
+			<th>Vorname</th><td><webobject name = "vorname" /></td>
+		</tr>
+		<tr>
+			<th>Login</th><td><webobject name = "login" /></td>
+		</tr>
+		<tr>
+			<th>Passwort</th><td><webobject name = "passwort" /></td>
+		</tr>
+		<webobject name = "isAdmin">
+		<tr>
+			<th>Admin</th><td><webobject name = "admin" /></td>
+		</tr>
+		</webobject>
+	</table>
+	<webobject name = "save" />&nbsp;<webobject name = "loeschen">Löschen</webobject>
+	</webobject>
+	</webobject>
+</body>
+</html>

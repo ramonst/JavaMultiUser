@@ -1,0 +1,120 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = CATEGORY; 
+            externalType = VARCHAR; 
+            name = category; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {columnName = "DATE_RELEASED"; name = dateReleased; prototypeName = dateTime; }, 
+        {
+            className = "java.lang.Number"; 
+            columnName = "MOVIE_ID"; 
+            externalType = INT; 
+            name = movieId; 
+            precision = 10; 
+            valueType = l; 
+        }, 
+        {columnName = "POSTER_NAME"; name = posterName; prototypeName = varchar255; }, 
+        {columnName = RATED; name = rated; prototypeName = varchar10; }, 
+        {
+            allowsNull = Y; 
+            className = "java.lang.Number"; 
+            columnName = REVENUE; 
+            externalType = DOUBLE; 
+            name = revenue; 
+            precision = 20; 
+            scale = 2; 
+            valueType = d; 
+        }, 
+        {
+            allowsNull = Y; 
+            className = "java.lang.Number"; 
+            columnName = "STUDIO_ID"; 
+            externalType = INT; 
+            name = studioId; 
+            precision = 10; 
+            valueType = l; 
+        }, 
+        {columnName = TITLE; name = title; prototypeName = varchar255; }, 
+        {columnName = "TRAILER_NAME"; name = trailerName; prototypeName = varchar255; }
+    ); 
+    attributesUsedForLocking = (
+        category, 
+        dateReleased, 
+        movieId, 
+        posterName, 
+        rated, 
+        revenue, 
+        studioId, 
+        title, 
+        trailerName
+    ); 
+    className = "ch.filme.Movie"; 
+    classProperties = (
+        category, 
+        dateReleased, 
+        directors, 
+        movieRoles, 
+        posterName, 
+        rated, 
+        revenue, 
+        reviews, 
+        studio, 
+        title, 
+        trailerName, 
+        videos, 
+        votings
+    ); 
+    externalName = movie; 
+    fetchSpecificationDictionary = {}; 
+    name = Movie; 
+    primaryKeyAttributes = (movieId); 
+    relationships = (
+        {
+            destination = Director; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = movieId; sourceAttribute = movieId; }); 
+            name = directors; 
+        }, 
+        {
+            destination = MovieRole; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = movieId; sourceAttribute = movieId; }); 
+            name = movieRoles; 
+        }, 
+        {
+            destination = Review; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = movieId; sourceAttribute = movieId; }); 
+            name = reviews; 
+        }, 
+        {
+            destination = Studio; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = studioId; sourceAttribute = studioId; }); 
+            name = studio; 
+        }, 
+        {
+            destination = Video; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = movieId; sourceAttribute = movieId; }); 
+            name = videos; 
+        }, 
+        {
+            destination = Voting; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = movieId; sourceAttribute = movieId; }); 
+            name = votings; 
+        }
+    ); 
+}

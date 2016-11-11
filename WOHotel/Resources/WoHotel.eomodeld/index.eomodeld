@@ -1,0 +1,20 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {}; 
+    entities = (
+        {className = gast; name = gast; }, 
+        {className = getraenk; name = getraenk; }, 
+        {className = minibar; name = minibar; }, 
+        {className = zimmer; name = zimmer; }, 
+        {className = zimmerbelegung; name = zimmerbelegung; }
+    ); 
+    userInfo = {
+        "_EntityModeler" = {
+            activeDatabaseConfigName = Default; 
+            databaseConfigs = {
+                Default = {adaptorName = JDBC; prototypeEntityName = EOJDBCMySQLPrototypes; }; 
+            }; 
+        }; 
+    }; 
+}

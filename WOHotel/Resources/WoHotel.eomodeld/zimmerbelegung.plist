@@ -1,0 +1,9 @@
+{
+    attributes = ({allowsNull = N; name = id; prototypeName = id; }); 
+    attributesUsedForLocking = (id); 
+    className = zimmerbelegung; 
+    externalName = ZIMMERBELEGUNG; 
+    fetchSpecificationDictionary = {}; 
+    name = zimmerbelegung; 
+    primaryKeyAttributes = (id); 
+}

@@ -1,0 +1,42 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = artikelID; 
+            name = artikelID; 
+            prototypeName = id; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = bestellungID; 
+            name = bestellungID; 
+            prototypeName = id; 
+        }, 
+        {allowsNull = N; name = id; prototypeName = id; }
+    ); 
+    attributesUsedForLocking = (artikelID, bestellungID, id); 
+    className = "ch.wiss.EOBasics.eo.Bestellposition"; 
+    classProperties = (artikel, bestellung); 
+    externalName = "BEST_POS"; 
+    fetchSpecificationDictionary = {}; 
+    name = Bestellposition; 
+    primaryKeyAttributes = (id); 
+    relationships = (
+        {
+            destination = Artikel; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = artikelID; }); 
+            name = artikel; 
+        }, 
+        {
+            destination = Bestellung; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = bestellungID; }); 
+            name = bestellung; 
+        }
+    ); 
+}

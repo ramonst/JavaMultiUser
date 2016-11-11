@@ -1,0 +1,60 @@
+{
+    attributes = (
+        {
+            className = "java.lang.Number"; 
+            columnName = "CUSTOMER_ID"; 
+            externalType = INT; 
+            name = customerId; 
+            precision = 10; 
+            valueType = l; 
+        }, 
+        {columnName = "DATE_OUT"; name = dateOut; prototypeName = dateTime; }, 
+        {columnName = "DATE_RETURNED"; name = dateReturned; prototypeName = dateTime; }, 
+        {
+            className = "java.lang.Number"; 
+            columnName = "RENTAL_ID"; 
+            externalType = INT; 
+            name = rentalId; 
+            precision = 10; 
+            valueType = l; 
+        }, 
+        {
+            className = "java.lang.Number"; 
+            columnName = "UNIT_ID"; 
+            externalType = INT; 
+            name = unitId; 
+            precision = 10; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (customerId, dateOut, dateReturned, rentalId, unitId); 
+    className = "ch.filme.Rental"; 
+    classProperties = (customer, dateOut, dateReturned, fees, unit); 
+    externalName = rental; 
+    fetchSpecificationDictionary = {}; 
+    name = Rental; 
+    primaryKeyAttributes = (rentalId); 
+    relationships = (
+        {
+            destination = Customer; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = customerId; sourceAttribute = customerId; }); 
+            name = customer; 
+        }, 
+        {
+            destination = Fee; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = rentalId; sourceAttribute = rentalId; }); 
+            name = fees; 
+        }, 
+        {
+            destination = Unit; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = unitId; sourceAttribute = unitId; }); 
+            name = unit; 
+        }
+    ); 
+}

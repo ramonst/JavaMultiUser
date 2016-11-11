@@ -1,0 +1,52 @@
+{
+    attributes = (
+        {
+            className = "java.lang.Number"; 
+            columnName = "MOVIE_ID"; 
+            externalType = INT; 
+            name = movieId; 
+            precision = 10; 
+            valueType = l; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ROLE_NAME"; 
+            externalType = VARCHAR; 
+            name = roleName; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }, 
+        {
+            className = "java.lang.Number"; 
+            columnName = "TALENT_ID"; 
+            externalType = INT; 
+            name = talentId; 
+            precision = 10; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (movieId, roleName, talentId); 
+    className = "ch.filme.MovieRole"; 
+    classProperties = (movie, roleName, talent); 
+    externalName = "movie_role"; 
+    fetchSpecificationDictionary = {}; 
+    name = MovieRole; 
+    primaryKeyAttributes = (movieId, talentId); 
+    relationships = (
+        {
+            destination = Movie; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = movieId; sourceAttribute = movieId; }); 
+            name = movie; 
+        }, 
+        {
+            destination = Talent; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = talentId; sourceAttribute = talentId; }); 
+            name = talent; 
+        }
+    ); 
+}

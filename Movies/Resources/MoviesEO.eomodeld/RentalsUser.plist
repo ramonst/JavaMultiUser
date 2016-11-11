@@ -1,0 +1,61 @@
+{
+    attributes = (
+        {
+            className = "java.lang.Number"; 
+            columnName = "ACCESS_LEVEL"; 
+            externalType = INT; 
+            name = accessLevel; 
+            precision = 10; 
+            valueType = l; 
+        }, 
+        {
+            allowsNull = Y; 
+            className = "java.lang.Number"; 
+            columnName = "CUSTOMER_ID"; 
+            externalType = INT; 
+            name = customerId; 
+            precision = 10; 
+            valueType = l; 
+        }, 
+        {
+            columnName = LOGIN; 
+            externalType = VARCHAR; 
+            name = login; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = PASSWORD; 
+            externalType = VARCHAR; 
+            name = password; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            className = "java.lang.Number"; 
+            columnName = "USER_ID"; 
+            externalType = INT; 
+            name = userId; 
+            precision = 10; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (accessLevel, customerId, login, password, userId); 
+    className = "ch.filme.RentalsUser"; 
+    classProperties = (accessLevel, customer, login, password); 
+    externalName = "rentals_user"; 
+    fetchSpecificationDictionary = {}; 
+    name = RentalsUser; 
+    primaryKeyAttributes = (userId); 
+    relationships = (
+        {
+            destination = Customer; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = customerId; sourceAttribute = customerId; }); 
+            name = customer; 
+        }
+    ); 
+}

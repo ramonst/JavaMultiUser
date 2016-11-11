@@ -1,0 +1,61 @@
+{
+    attributes = (
+        {
+            className = "java.lang.Number"; 
+            columnName = AMOUNT; 
+            externalType = DOUBLE; 
+            name = amount; 
+            precision = 20; 
+            scale = 2; 
+            valueType = d; 
+        }, 
+        {columnName = "DATE_PAID"; name = datePaid; prototypeName = dateTime; }, 
+        {
+            className = "java.lang.Number"; 
+            columnName = "FEE_ID"; 
+            externalType = INT; 
+            name = feeId; 
+            precision = 10; 
+            valueType = l; 
+        }, 
+        {
+            className = "java.lang.Number"; 
+            columnName = "FEE_TYPE_ID"; 
+            externalType = INT; 
+            name = feeTypeId; 
+            precision = 10; 
+            valueType = l; 
+        }, 
+        {
+            className = "java.lang.Number"; 
+            columnName = "RENTAL_ID"; 
+            externalType = INT; 
+            name = rentalId; 
+            precision = 10; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (amount, datePaid, feeId, feeTypeId, rentalId); 
+    className = "ch.filme.Fee"; 
+    classProperties = (amount, datePaid, feeType, rental); 
+    externalName = fee; 
+    fetchSpecificationDictionary = {}; 
+    name = Fee; 
+    primaryKeyAttributes = (feeId); 
+    relationships = (
+        {
+            destination = FeeType; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = feeTypeId; sourceAttribute = feeTypeId; }); 
+            name = feeType; 
+        }, 
+        {
+            destination = Rental; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = rentalId; sourceAttribute = rentalId; }); 
+            name = rental; 
+        }
+    ); 
+}
