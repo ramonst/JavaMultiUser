@@ -1,21 +1,53 @@
 titel : WOTextField {
-	value = filmTitel;
+	value = suchFilmTitel;
 }
 
 studio : WOTextField {
-	value = filmStudio;
+	value = suchFilmStudio;
 }
 
 regisseur : WOTextField {
-	value = filmRegisseur;
+	value = suchFilmRegisseur;
 }
 
 
 submit : WOSubmitButton {
-	action = letsgo;
+	action = loadSpecs;
 	value = "Suchen";
+	
 }
 
-titelname : WOTextField {
-	value = movie;
+form : WOForm {
+	multipleSubmit = true;
 }
+
+searched : WOConditional {
+	condition = searched;
+}
+
+liste :  WORepetition {
+	list = movieResult;
+	item = loopvar;
+}
+
+foundTitel : WOTextField {
+	value = loopvar.title;
+}
+
+foundYear : WOTextField {
+	value = loopvar.dateReleased.year;
+}
+
+foundStudio : WOTextField {
+	value = loopvar.studio.name;
+}
+
+foundReg : WORepetition {
+	list = loopvar.talents;
+	item = talentLoop;
+}
+
+regname : WOTextField {
+	value = regName;
+}
+

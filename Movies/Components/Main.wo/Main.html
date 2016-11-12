@@ -4,16 +4,38 @@
 		<title>Untitled</title>
 	</head>
 	<body>
-	<webobject name="titel" /><br />
-	<webobject name="studio" /><br />
-	<webobject name="regisseur" /><br />
-	<webobject name="submit" />
+	<webobject name="form">
+		<webobject name="titel" /><br />
+		<webobject name="studio" /><br />
+		<webobject name="regisseur" /><br />
+		<webobject name="submit" />
+	</webobject>
 	
 	<br/>
 	<br/>
 	<br/>
 	<br/>
+	<webobject name="searched">
+		<webobject name="liste">
+			<table>
+			<tr>
+			<th>Titel</th><td><webobject name="foundTitel" /></td>
+			</tr>
+				<tr>
+				<th>Year</th><td><webobject name="foundYear" /></td>
+			</tr>
+				<tr>
+			<th>Studio</th><td><webobject name="foundStudio" /></td>
+			</tr>
 	
-	<webobject name="titelname" />
+			
+			<webobject name="foundReg">
+			<th>Regisseur</th>
+					<td><webobject name="regname" /> </td>
+			</webobject>
+					
+			</table>
+		</webobject>
+	</webobject>
 	</body>
 </html>

@@ -5,7 +5,7 @@
     entities = (
         {className = "ch.filme.CreditCard"; name = CreditCard; }, 
         {className = "ch.filme.Customer"; name = Customer; }, 
-        {className = "ch.filme.Director"; name = Director; }, 
+        {className = EOGenericRecord; name = Director; }, 
         {className = "com.webobjects.eocontrol.EOGenericRecord"; name = EoPkTable; }, 
         {className = "ch.filme.Fee"; name = Fee; }, 
         {className = "ch.filme.FeeType"; name = FeeType; }, 
@@ -18,7 +18,7 @@
         {className = "ch.filme.Review"; name = Review; }, 
         {className = "ch.filme.Studio"; name = Studio; }, 
         {className = "ch.filme.Talent"; name = Talent; }, 
-        {className = "ch.filme.TalenPhoto"; name = TalentPhoto; }, 
+        {className = "ch.filme.TalentPhoto"; name = TalentPhoto; }, 
         {className = "ch.filme.Unit"; name = Unit; }, 
         {className = "ch.filme.Video"; name = Video; }, 
         {className = "ch.filme.Voting"; name = Voting; }

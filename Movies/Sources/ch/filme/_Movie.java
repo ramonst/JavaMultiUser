@@ -27,10 +27,10 @@ public abstract class _Movie extends  ERXGenericRecord {
   public static final ERXKey<String> TRAILER_NAME = new ERXKey<String>("trailerName");
 
   // Relationship Keys
-  public static final ERXKey<ch.filme.Director> DIRECTORS = new ERXKey<ch.filme.Director>("directors");
   public static final ERXKey<ch.filme.MovieRole> MOVIE_ROLES = new ERXKey<ch.filme.MovieRole>("movieRoles");
   public static final ERXKey<ch.filme.Review> REVIEWS = new ERXKey<ch.filme.Review>("reviews");
   public static final ERXKey<ch.filme.Studio> STUDIO = new ERXKey<ch.filme.Studio>("studio");
+  public static final ERXKey<ch.filme.Talent> TALENTS = new ERXKey<ch.filme.Talent>("talents");
   public static final ERXKey<ch.filme.Video> VIDEOS = new ERXKey<ch.filme.Video>("videos");
   public static final ERXKey<ch.filme.Voting> VOTINGS = new ERXKey<ch.filme.Voting>("votings");
 
@@ -44,10 +44,10 @@ public abstract class _Movie extends  ERXGenericRecord {
   public static final String TRAILER_NAME_KEY = TRAILER_NAME.key();
 
   // Relationships
-  public static final String DIRECTORS_KEY = DIRECTORS.key();
   public static final String MOVIE_ROLES_KEY = MOVIE_ROLES.key();
   public static final String REVIEWS_KEY = REVIEWS.key();
   public static final String STUDIO_KEY = STUDIO.key();
+  public static final String TALENTS_KEY = TALENTS.key();
   public static final String VIDEOS_KEY = VIDEOS.key();
   public static final String VOTINGS_KEY = VOTINGS.key();
 
@@ -144,91 +144,6 @@ public abstract class _Movie extends  ERXGenericRecord {
       }
     } else {
       addObjectToBothSidesOfRelationshipWithKey(value, _Movie.STUDIO_KEY);
-    }
-  }
-
-  public NSArray<ch.filme.Director> directors() {
-    return (NSArray<ch.filme.Director>)storedValueForKey(_Movie.DIRECTORS_KEY);
-  }
-
-  public NSArray<ch.filme.Director> directors(EOQualifier qualifier) {
-    return directors(qualifier, null, false);
-  }
-
-  public NSArray<ch.filme.Director> directors(EOQualifier qualifier, boolean fetch) {
-    return directors(qualifier, null, fetch);
-  }
-
-  public NSArray<ch.filme.Director> directors(EOQualifier qualifier, NSArray<EOSortOrdering> sortOrderings, boolean fetch) {
-    NSArray<ch.filme.Director> results;
-    if (fetch) {
-      EOQualifier fullQualifier;
-      EOQualifier inverseQualifier = ERXQ.equals(ch.filme.Director.MOVIE_KEY, this);
-
-      if (qualifier == null) {
-        fullQualifier = inverseQualifier;
-      }
-      else {
-        fullQualifier = ERXQ.and(qualifier, inverseQualifier);
-      }
-
-      results = ch.filme.Director.fetchDirectors(editingContext(), fullQualifier, sortOrderings);
-    }
-    else {
-      results = directors();
-      if (qualifier != null) {
-        results = (NSArray<ch.filme.Director>)EOQualifier.filteredArrayWithQualifier(results, qualifier);
-      }
-      if (sortOrderings != null) {
-        results = (NSArray<ch.filme.Director>)EOSortOrdering.sortedArrayUsingKeyOrderArray(results, sortOrderings);
-      }
-    }
-    return results;
-  }
-
-  public void addToDirectors(ch.filme.Director object) {
-    includeObjectIntoPropertyWithKey(object, _Movie.DIRECTORS_KEY);
-  }
-
-  public void removeFromDirectors(ch.filme.Director object) {
-    excludeObjectFromPropertyWithKey(object, _Movie.DIRECTORS_KEY);
-  }
-
-  public void addToDirectorsRelationship(ch.filme.Director object) {
-    log.debug("adding {} to directors relationship", object);
-    if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
-      addToDirectors(object);
-    }
-    else {
-      addObjectToBothSidesOfRelationshipWithKey(object, _Movie.DIRECTORS_KEY);
-    }
-  }
-
-  public void removeFromDirectorsRelationship(ch.filme.Director object) {
-    log.debug("removing {} from directors relationship", object);
-    if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
-      removeFromDirectors(object);
-    }
-    else {
-      removeObjectFromBothSidesOfRelationshipWithKey(object, _Movie.DIRECTORS_KEY);
-    }
-  }
-
-  public ch.filme.Director createDirectorsRelationship() {
-    EOEnterpriseObject eo = EOUtilities.createAndInsertInstance(editingContext(),  ch.filme.Director.ENTITY_NAME );
-    addObjectToBothSidesOfRelationshipWithKey(eo, _Movie.DIRECTORS_KEY);
-    return (ch.filme.Director) eo;
-  }
-
-  public void deleteDirectorsRelationship(ch.filme.Director object) {
-    removeObjectFromBothSidesOfRelationshipWithKey(object, _Movie.DIRECTORS_KEY);
-    editingContext().deleteObject(object);
-  }
-
-  public void deleteAllDirectorsRelationships() {
-    Enumeration<ch.filme.Director> objects = directors().immutableClone().objectEnumerator();
-    while (objects.hasMoreElements()) {
-      deleteDirectorsRelationship(objects.nextElement());
     }
   }
 
@@ -399,6 +314,72 @@ public abstract class _Movie extends  ERXGenericRecord {
     Enumeration<ch.filme.Review> objects = reviews().immutableClone().objectEnumerator();
     while (objects.hasMoreElements()) {
       deleteReviewsRelationship(objects.nextElement());
+    }
+  }
+
+  public NSArray<ch.filme.Talent> talents() {
+    return (NSArray<ch.filme.Talent>)storedValueForKey(_Movie.TALENTS_KEY);
+  }
+
+  public NSArray<ch.filme.Talent> talents(EOQualifier qualifier) {
+    return talents(qualifier, null);
+  }
+
+  public NSArray<ch.filme.Talent> talents(EOQualifier qualifier, NSArray<EOSortOrdering> sortOrderings) {
+    NSArray<ch.filme.Talent> results;
+      results = talents();
+      if (qualifier != null) {
+        results = (NSArray<ch.filme.Talent>)EOQualifier.filteredArrayWithQualifier(results, qualifier);
+      }
+      if (sortOrderings != null) {
+        results = (NSArray<ch.filme.Talent>)EOSortOrdering.sortedArrayUsingKeyOrderArray(results, sortOrderings);
+      }
+    return results;
+  }
+
+  public void addToTalents(ch.filme.Talent object) {
+    includeObjectIntoPropertyWithKey(object, _Movie.TALENTS_KEY);
+  }
+
+  public void removeFromTalents(ch.filme.Talent object) {
+    excludeObjectFromPropertyWithKey(object, _Movie.TALENTS_KEY);
+  }
+
+  public void addToTalentsRelationship(ch.filme.Talent object) {
+    log.debug("adding {} to talents relationship", object);
+    if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
+      addToTalents(object);
+    }
+    else {
+      addObjectToBothSidesOfRelationshipWithKey(object, _Movie.TALENTS_KEY);
+    }
+  }
+
+  public void removeFromTalentsRelationship(ch.filme.Talent object) {
+    log.debug("removing {} from talents relationship", object);
+    if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
+      removeFromTalents(object);
+    }
+    else {
+      removeObjectFromBothSidesOfRelationshipWithKey(object, _Movie.TALENTS_KEY);
+    }
+  }
+
+  public ch.filme.Talent createTalentsRelationship() {
+    EOEnterpriseObject eo = EOUtilities.createAndInsertInstance(editingContext(),  ch.filme.Talent.ENTITY_NAME );
+    addObjectToBothSidesOfRelationshipWithKey(eo, _Movie.TALENTS_KEY);
+    return (ch.filme.Talent) eo;
+  }
+
+  public void deleteTalentsRelationship(ch.filme.Talent object) {
+    removeObjectFromBothSidesOfRelationshipWithKey(object, _Movie.TALENTS_KEY);
+    editingContext().deleteObject(object);
+  }
+
+  public void deleteAllTalentsRelationships() {
+    Enumeration<ch.filme.Talent> objects = talents().immutableClone().objectEnumerator();
+    while (objects.hasMoreElements()) {
+      deleteTalentsRelationship(objects.nextElement());
     }
   }
 

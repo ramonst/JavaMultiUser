@@ -46,7 +46,7 @@
         {
             columnName = "STREET_ADDRESS"; 
             name = streetAddress; 
-            prototypeName = shortString; 
+            prototypeName = varchar50; 
         }, 
         {columnName = ZIP; name = zip; prototypeName = varchar10; }
     ); 

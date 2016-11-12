@@ -23,6 +23,7 @@ public abstract class _Talent extends  ERXGenericRecord {
 
   // Relationship Keys
   public static final ERXKey<ch.filme.MovieRole> MOVIE_ROLES = new ERXKey<ch.filme.MovieRole>("movieRoles");
+  public static final ERXKey<ch.filme.Movie> MOVIES = new ERXKey<ch.filme.Movie>("movies");
 
   // Attributes
   public static final String FIRST_NAME_KEY = FIRST_NAME.key();
@@ -30,6 +31,7 @@ public abstract class _Talent extends  ERXGenericRecord {
 
   // Relationships
   public static final String MOVIE_ROLES_KEY = MOVIE_ROLES.key();
+  public static final String MOVIES_KEY = MOVIES.key();
 
   private static final Logger log = LoggerFactory.getLogger(_Talent.class);
 
@@ -141,6 +143,72 @@ public abstract class _Talent extends  ERXGenericRecord {
     Enumeration<ch.filme.MovieRole> objects = movieRoles().immutableClone().objectEnumerator();
     while (objects.hasMoreElements()) {
       deleteMovieRolesRelationship(objects.nextElement());
+    }
+  }
+
+  public NSArray<ch.filme.Movie> movies() {
+    return (NSArray<ch.filme.Movie>)storedValueForKey(_Talent.MOVIES_KEY);
+  }
+
+  public NSArray<ch.filme.Movie> movies(EOQualifier qualifier) {
+    return movies(qualifier, null);
+  }
+
+  public NSArray<ch.filme.Movie> movies(EOQualifier qualifier, NSArray<EOSortOrdering> sortOrderings) {
+    NSArray<ch.filme.Movie> results;
+      results = movies();
+      if (qualifier != null) {
+        results = (NSArray<ch.filme.Movie>)EOQualifier.filteredArrayWithQualifier(results, qualifier);
+      }
+      if (sortOrderings != null) {
+        results = (NSArray<ch.filme.Movie>)EOSortOrdering.sortedArrayUsingKeyOrderArray(results, sortOrderings);
+      }
+    return results;
+  }
+
+  public void addToMovies(ch.filme.Movie object) {
+    includeObjectIntoPropertyWithKey(object, _Talent.MOVIES_KEY);
+  }
+
+  public void removeFromMovies(ch.filme.Movie object) {
+    excludeObjectFromPropertyWithKey(object, _Talent.MOVIES_KEY);
+  }
+
+  public void addToMoviesRelationship(ch.filme.Movie object) {
+    log.debug("adding {} to movies relationship", object);
+    if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
+      addToMovies(object);
+    }
+    else {
+      addObjectToBothSidesOfRelationshipWithKey(object, _Talent.MOVIES_KEY);
+    }
+  }
+
+  public void removeFromMoviesRelationship(ch.filme.Movie object) {
+    log.debug("removing {} from movies relationship", object);
+    if (er.extensions.eof.ERXGenericRecord.InverseRelationshipUpdater.updateInverseRelationships()) {
+      removeFromMovies(object);
+    }
+    else {
+      removeObjectFromBothSidesOfRelationshipWithKey(object, _Talent.MOVIES_KEY);
+    }
+  }
+
+  public ch.filme.Movie createMoviesRelationship() {
+    EOEnterpriseObject eo = EOUtilities.createAndInsertInstance(editingContext(),  ch.filme.Movie.ENTITY_NAME );
+    addObjectToBothSidesOfRelationshipWithKey(eo, _Talent.MOVIES_KEY);
+    return (ch.filme.Movie) eo;
+  }
+
+  public void deleteMoviesRelationship(ch.filme.Movie object) {
+    removeObjectFromBothSidesOfRelationshipWithKey(object, _Talent.MOVIES_KEY);
+    editingContext().deleteObject(object);
+  }
+
+  public void deleteAllMoviesRelationships() {
+    Enumeration<ch.filme.Movie> objects = movies().immutableClone().objectEnumerator();
+    while (objects.hasMoreElements()) {
+      deleteMoviesRelationship(objects.nextElement());
     }
   }
 

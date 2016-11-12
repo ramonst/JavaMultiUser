@@ -27,18 +27,28 @@
     ); 
     attributesUsedForLocking = (firstName, lastName, talentId); 
     className = "ch.filme.Talent"; 
-    classProperties = (firstName, lastName, movieRoles); 
+    classProperties = (firstName, lastName, movieRoles, movies); 
     externalName = talent; 
     fetchSpecificationDictionary = {}; 
     name = Talent; 
     primaryKeyAttributes = (talentId); 
     relationships = (
         {
+            deleteRule = EODeleteRuleCascade; 
+            destination = Director; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = talentTalentId; sourceAttribute = talentId; }); 
+            name = directors; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
             destination = MovieRole; 
             isToMany = Y; 
             joinSemantic = EOInnerJoin; 
             joins = ({destinationAttribute = talentId; sourceAttribute = talentId; }); 
             name = movieRoles; 
-        }
+        }, 
+        {definition = "directors.movie"; name = movies; }
     ); 
 }

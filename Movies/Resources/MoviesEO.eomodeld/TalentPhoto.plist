@@ -18,7 +18,7 @@
         }
     ); 
     attributesUsedForLocking = (photo, talentId); 
-    className = "ch.filme.TalenPhoto"; 
+    className = "ch.filme.TalentPhoto"; 
     classProperties = (photo); 
     externalName = "talent_photo"; 
     fetchSpecificationDictionary = {}; 

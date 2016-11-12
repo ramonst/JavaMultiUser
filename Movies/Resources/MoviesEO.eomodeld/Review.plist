@@ -16,7 +16,7 @@
             name = review; 
             width = 65535; 
         }, 
-        {columnName = REVIEWER; name = reviewer; prototypeName = shortString; }, 
+        {columnName = REVIEWER; name = reviewer; prototypeName = varchar50; }, 
         {
             className = "java.lang.Number"; 
             columnName = "REVIEW_ID"; 

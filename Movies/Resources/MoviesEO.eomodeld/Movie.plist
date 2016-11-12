@@ -57,13 +57,13 @@
     classProperties = (
         category, 
         dateReleased, 
-        directors, 
         movieRoles, 
         posterName, 
         rated, 
         revenue, 
         reviews, 
         studio, 
+        talents, 
         title, 
         trailerName, 
         videos, 
@@ -75,11 +75,13 @@
     primaryKeyAttributes = (movieId); 
     relationships = (
         {
+            deleteRule = EODeleteRuleCascade; 
             destination = Director; 
             isToMany = Y; 
             joinSemantic = EOInnerJoin; 
-            joins = ({destinationAttribute = movieId; sourceAttribute = movieId; }); 
+            joins = ({destinationAttribute = movieMovieId; sourceAttribute = movieId; }); 
             name = directors; 
+            propagatesPrimaryKey = Y; 
         }, 
         {
             destination = MovieRole; 
@@ -102,6 +104,7 @@
             joins = ({destinationAttribute = studioId; sourceAttribute = studioId; }); 
             name = studio; 
         }, 
+        {definition = "directors.talent"; name = talents; }, 
         {
             destination = Video; 
             isToMany = Y; 
